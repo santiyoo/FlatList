@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-web';
 import { jugadores } from '../data/Jugadores';
 
@@ -10,15 +10,21 @@ const Item = ({ nombre, apellido }) => (
 );
 
 const Example = () => {
-  const renderItem = ({ item }) => (
-    <Item nombre={item.Nombre} apellido={item.Apellido} />
-  );
+  // const renderItem = ({ item }) => (
+  //   <Item nombre={item.Nombre} apellido={item.Apellido} />
+  // );
 
   return (
       <SafeAreaView style={styles.container}>
         <FlatList
           data={jugadores}
-          renderItem={renderItem}
+          renderItem={({item})=>
+            <>
+              <View style={{alignItems: 'center'}}>
+                <Text>{item.Nombre} {item.Apellido}</Text>
+              </View>
+            </>
+          }
           keyExtractor={item => item.id}
           key='index'
         />
@@ -29,7 +35,7 @@ const Example = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 50
+    marginTop: StatusBar.currentHeight || 0,
   },
   title: {
     fontSize: 32,

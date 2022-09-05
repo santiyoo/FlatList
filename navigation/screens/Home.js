@@ -10,11 +10,7 @@ export default function HomeScreen(){
         navigation.navigate('Lista')
     }
 
-    const agregar = () => {
-        console.log(data)
-        jugadores.push(data)
-        console.log(jugadores)
-    }
+    const [ error, setError ] = useState(false);
 
     const [ data, setData ] = useState({
         Nombre: undefined,
@@ -27,6 +23,23 @@ export default function HomeScreen(){
             [name]: e,
         });
     };
+
+    function agregar(e){
+        e.preventDefault()
+        
+        if ( data.Nombre === undefined || data.Apellido === undefined ) {
+          setError(true);
+          alert('Campos incompletos')
+          return;
+        }
+        else{
+            console.log(data)
+            jugadores.push(data)
+            console.log(jugadores)
+        }
+        
+        setError(false);
+      }
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -43,7 +56,7 @@ export default function HomeScreen(){
             <TouchableOpacity style={[styles.button, styles.yellow]} onPress={agregar}>
                 <Text style={[styles.text]}>Agregar</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.button, styles.yellow]} onPress={ListaScreen}>
+            <TouchableOpacity style={[styles.button, styles.blue]} onPress={ListaScreen}>
                 <Text style={[styles.text]}>Ver Lista</Text>
             </TouchableOpacity>
         </View>
@@ -57,16 +70,13 @@ const styles = StyleSheet.create({
         height: 50, 
         padding: 10, 
         alignItems: 'center', 
-        borderRadius: 5
+        borderRadius: 5,
     },
     yellow: {
         backgroundColor:'#FFAE03', 
     },
     blue: {
         backgroundColor:'blue'
-    },
-    green: {
-        backgroundColor:'green'
     },
     text: {
         color: 'white', 
@@ -78,15 +88,5 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         width: 300
-    },
-    separator: {
-        marginVertical: 8,
-        borderBottomColor: '#737373',
-        borderBottomWidth: StyleSheet.hairlineWidth,
-    },
-    box: {
-        borderWidth: 1,
-        borderColor: 'black',
-        padding: 10,
     },
 });

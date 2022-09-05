@@ -19,4 +19,24 @@ export let jugadores = [
       Nombre: 'Robert',
       Apellido: 'Lewandowski',
     },
+    {
+      Nombre: 'Ángel',
+      Apellido: 'Di María',
+    },
+    {
+      Nombre: 'Paulo',
+      Apellido: 'Dybala',
+    },
+    {
+      Nombre: 'Kevin',
+      Apellido: 'De Bruyne',
+    },
+    {
+      Nombre: 'Karim',
+      Apellido: 'Benzema',
+    },
+    {
+      Nombre: 'Mohamed',
+      Apellido: 'Salah',
+    },
 ];
