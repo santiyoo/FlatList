@@ -9,13 +9,10 @@ const Item = ({ nombre, apellido }) => (
   </View>
 );
 
-
 const Example = () => {
   const renderItem = ({ item }) => (
-    <Item nombre={item.nombre} apellido={item.apellido} />
+    <Item nombre={item.Nombre} apellido={item.Apellido} />
   );
-
-  console.log('Estoy en Example', jugadores)
 
   return (
       <SafeAreaView style={styles.container}>

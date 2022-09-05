@@ -1,22 +1,22 @@
 export let jugadores = [
     {
-      nombre: 'Lionel',
-      apellido: 'Messi'
+      Nombre: 'Lionel',
+      Apellido: 'Messi'
     },
     {
-      nombre: 'Cristiano',
-      apellido: 'Ronaldo'
+      Nombre: 'Cristiano',
+      Apellido: 'Ronaldo'
     },
     {
-      nombre: 'Erling',
-      apellido: 'Haaland',
+      Nombre: 'Erling',
+      Apellido: 'Haaland',
     },
     {
-      nombre: 'Kylian',
-      apellido: 'Mbappé',
+      Nombre: 'Kylian',
+      Apellido: 'Mbappé',
     },
     {
-      nombre: 'Robert',
-      apellido: 'Lewandowski',
+      Nombre: 'Robert',
+      Apellido: 'Lewandowski',
     },
 ];
