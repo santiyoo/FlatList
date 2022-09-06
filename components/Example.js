@@ -3,30 +3,20 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from
 import { TouchableOpacity } from 'react-native-web';
 import { jugadores } from '../data/Jugadores';
 
-const Item = ({ nombre, apellido }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>- {nombre} {apellido}</Text>
-  </View>
-);
-
 const Example = () => {
-  // const renderItem = ({ item }) => (
-  //   <Item nombre={item.Nombre} apellido={item.Apellido} />
-  // );
-
   return (
       <SafeAreaView style={styles.container}>
+        <Text style={styles.title}>Jugadores</Text>
         <FlatList
           data={jugadores}
           renderItem={({item})=>
             <>
-              <View style={{alignItems: 'center'}}>
-                <Text>{item.Nombre} {item.Apellido}</Text>
+              <View>
+                <Text style={styles.subhead}>- {item.Nombre} {item.Apellido}</Text>
               </View>
             </>
           }
-          keyExtractor={item => item.id}
-          key='index'
+          keyExtractor={item => item.Apellido}
         />
       </SafeAreaView>
   );
@@ -38,8 +28,16 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   title: {
-    fontSize: 32,
+    textAlign: 'center',
+    fontSize: 35,
+    fontWeight: 'bold',
+    marginBottom: 15
   },
+  subhead: {
+    fontSize: 25,
+    marginLeft: 15,
+    marginVertical: 5
+  }
 });
 
 export default Example;

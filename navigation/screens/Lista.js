@@ -4,6 +4,6 @@ import Example from '../../components/Example';
 
 export default function ListaScreen(){
     return (
-        <Example/>
+        <Example index={"index"}/>
     )
 }
