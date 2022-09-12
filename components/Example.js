@@ -1,6 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-web';
+import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
 import { jugadores } from '../data/Jugadores';
 
 const Example = () => {

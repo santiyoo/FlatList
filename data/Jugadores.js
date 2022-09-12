@@ -1,3 +1,4 @@
+
 export let jugadores = [
     {
       
@@ -39,5 +40,9 @@ export let jugadores = [
     {
       Nombre: 'Mohamed',
       Apellido: 'Salah',
+    },
+    {
+      Nombre: 'Harry',
+      Apellido: 'Kane',
     },
 ];
